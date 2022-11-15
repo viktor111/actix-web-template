@@ -4,6 +4,7 @@ use env_logger::Env;
 use log::{debug, error, info, trace, warn};
 
 mod settings;
+mod error;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {

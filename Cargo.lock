@@ -186,6 +186,7 @@ name = "actix-web-template"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "derive_more",
  "env_logger",
  "log",
  "serde",
