@@ -7,6 +7,7 @@ use serde::Deserialize;
 pub struct Settings {
     pub ip: String,
     pub port: u16,
+    pub logging_template: String,
 }
 
 impl Settings {

@@ -11,12 +11,10 @@ async fn main() -> std::io::Result<()> {
     
     let settings = settings::Settings::new().unwrap();
 
-    info!("Settings: {:?}", settings);
-
-    HttpServer::new(|| {
+    HttpServer::new(move || {
         App::new()
             .wrap(Logger::default())
-            .wrap(Logger::new("%a %{User-Agent}i"))
+            .wrap(Logger::new(&settings.logging_template))
     })
     .bind((settings.ip, settings.port))?
     .run()
